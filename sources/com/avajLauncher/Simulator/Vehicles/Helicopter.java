@@ -1,6 +1,7 @@
 package sources.com.avajLauncher.Simulator.Vehicles;
 
-import sources.com.avajLauncher.Weather.WeatherTower;
+import sources.com.avajLauncher.Simulator.Vehicles.*;
+import sources.com.avajLauncher.Weather.*;
 
 public class Helicopter extends Aircraft implements Flyable{
 

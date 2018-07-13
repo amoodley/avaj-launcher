@@ -27,27 +27,12 @@ public class Tower{
         }
     }
 
-    protected void conditionsChanged(){
-//        writeToFile("write", "\n\n");
-        // if (this.observers.size() <= 0){
-        //     System.out.println("Change conditions");
-        //     // writeToFile("write", "\n\n All Aircrafts have landed.");
-        //     // writeToFile("destroy", "");
-        //     System.exit(0);
-        // }
-
-        // System.out.println("Change conditions: + size: "  +  this.observers.size());
-        // this.observers.removeAll(unregister);
-        // for (Integer loopCount = 0; loopCount < this.observers.size(); loopCount++){
-        //     System.out.println("Loop conditions: + size: "  +  loopCount);
-        //     this.observers.get(loopCount).updateConditions();
-
-        // }
-        for (Flyable var : observers) {
-            System.out.println(var.updateConditions());
-            var.updateConditions();
+    protected void conditionsChanged()
+	{
+        for (Flyable flyable : observers)
+		{
+            flyable.updateConditions();
         }
         observers.removeAll(unregister);
-
-    }
+	}
 }

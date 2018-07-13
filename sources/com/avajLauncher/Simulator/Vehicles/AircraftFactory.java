@@ -1,11 +1,9 @@
 package sources.com.avajLauncher.Simulator.Vehicles;
 
-import sources.com.avajLauncher.Simulator.Vehicles.Helicopter;
-import sources.com.avajLauncher.Simulator.Vehicles.Baloon;
-import sources.com.avajLauncher.Simulator.Vehicles.JetPlane;
-import sources.com.avajLauncher.Simulator.Vehicles.Coordinates;
+import sources.com.avajLauncher.Simulator.Vehicles.*;
 
 public class AircraftFactory{
+
     public static Flyable newAircraft(String type, String name, int longitude, int latitude, int height){
         
         Coordinates coordinates = new Coordinates(longitude, latitude, height);
@@ -22,7 +20,7 @@ public class AircraftFactory{
             case "Baloon":
                 return baloon = new Baloon(name, coordinates);
             default:
-                System.out.printf("Aircraft type does not exist...");
+                System.out.printf("Aircraft type does not exist: " + type);
                 return null;
         }
     }

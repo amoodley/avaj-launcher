@@ -1,5 +1,8 @@
 package sources.com.avajLauncher.Simulator;
 
+import sources.com.avajLauncher.Weather.*;
+import sources.com.avajLauncher.Simulator.Vehicles.*;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -7,16 +10,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import sources.com.avajLauncher.Weather.*;
-import sources.com.avajLauncher.Simulator.Vehicles.*;
-import sources.com.avajLauncher.Simulator.Vehicles.AircraftFactory;;
-
 public class Simulator{
 
     private static WeatherTower     weatherTower;
     private static List<Flyable> flyables = new ArrayList<Flyable>();
 
-    public static void main(String[] arg){
+    public static void main(String[] arg) throws IOException {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(arg[0]));
             String line = reader.readLine();
@@ -43,17 +42,13 @@ public class Simulator{
                 }
             }
         } catch(FileNotFoundException e){
-            System.out.println("Couldn't find file: " + arg[0]);
+            System.out.println("File not found: " + arg[0]);
         } catch(IOException e){
-            System.out.println("There was an error reading the file: " + arg[0]);
+            System.out.println("File read error: " + arg[0]);
         } catch(ArrayIndexOutOfBoundsException e){
-            System.out.println("Specify simulation file");
-        }catch(NullPointerException e)
-        {
-            System.out.println("Lolol");
-        } 
-        finally {
-            // Logger.getLogger().close();
+            System.out.println("No file specified");
+        } catch(NullPointerException e){
+            System.out.println("Runtime_Error Null_Reference: " + e);
         }
     }
 }

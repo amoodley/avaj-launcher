@@ -1,7 +1,7 @@
 package sources.com.avajLauncher.Simulator.Vehicles;
 
-import sources.com.avajLauncher.Weather.WeatherTower;
-
+import sources.com.avajLauncher.Simulator.Vehicles.*;
+import sources.com.avajLauncher.Weather.*;
 
 public class Baloon extends Aircraft implements Flyable{
 
@@ -31,7 +31,6 @@ public class Baloon extends Aircraft implements Flyable{
                 this.coordinates.setHeight(this.coordinates.getHeight() - 15);
                 System.out.printf("Baloon#%s(%d): SNOW: Height = %d\n", this.name, this.id, this.coordinates.getHeight());
                 break;
-            
         }
 
         if (this.coordinates.getHeight() > 100){
